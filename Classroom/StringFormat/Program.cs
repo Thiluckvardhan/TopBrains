@@ -18,7 +18,6 @@ namespace StringFormat
             "Aarjav:39",
             "Sumanth:80",
             "Harsha:45",
-            // "Unknown"
             };
             System.Console.WriteLine("Enter Minimum Score");
             if (!int.TryParse(Console.ReadLine(), out int MinScore))
@@ -26,11 +25,11 @@ namespace StringFormat
                 System.Console.WriteLine("Please Enter only Integer as Input");
                 return;
             }
+            int temp;
             foreach (var item in items)
             {
                 Student stu = new();
                 var student = item.Split(':');
-                int temp;
                 if (student.Length != 2)
                 {
                     Console.WriteLine("Input is Wrong");
@@ -50,6 +49,7 @@ namespace StringFormat
             {
                 WriteIndented = true
             });
+            System.Console.WriteLine($"Students with {MinScore} as Minimum Score are :");
             Console.WriteLine(jsonformat);
         }
     }
